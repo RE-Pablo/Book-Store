@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(191, 86, 61);
+    /* background-color: #804000; */
+}
+
+h1 {
+    text-align: center;
+    color: #fff; /* Cambiar el color del texto para que resalte sobre el fondo */
+    font-size: 36px; /* Ajustar el tamaño de la fuente según tus preferencias */
+}
+
+.book-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.grupo-form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btnAdd {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btnAdd:hover {
+    background-color: #209450;
+}

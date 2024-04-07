@@ -4,25 +4,37 @@
 
 @section('content')
 
-<h1>Este sera el formulario edit</h1>
+<link rel="stylesheet" href="{{asset('css/edit.css')}}">
+<script src="https://kit.fontawesome.com/2d5cafece0.js" crossorigin="anonymous"></script>
 
-<form action="{{ route('book.update', $book->id) }}" method="POST">
+<h1>Formulario Edit</h1>
+
+<form action="{{ route('book.update', $book->id) }}" method="POST" class="book-form">
 
     @csrf
 
     @method('PUT')
 
-    <label for="">Titulo</label>
-    <input type="text" id="title" name="title" value="{{ $book->title }}">
+    <div class="grupo-form">
+        <label for="title">Título</label>
+        <input type="text" id="title" name="title" value="{{ $book->title }}" placeholder="{{ $book->title }}" >
+    </div>
     
-    <label for="">Autor</label>
-    <input type="text" id="author_name" name="author_name" value="{{ $book->author_name }}">
+    <div class="grupo-form">
+        <label for="author_name">Autor</label>
+        <input type="text" id="author_name" name="author_name" value="{{ $book->author_name }}" placeholder="{{ $book->author_name }}" >
+    </div>
     
-    <label for="">ISBN</label>
-    <input type="text" id="isbn" name="isbn" value="{{ $book->isbn }}">
+    <div class="grupo-form">
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" name="isbn" value="{{ $book->isbn }}" placeholder="{{ $book->isbn }}">
+    </div>
 
-    <label for="">Año Publicación</label>
-    <input type="number" id="published_year" name="published_year" value="{{ $book->published_year }}">
+    <div class="grupo-form">
+        <label for="published_year">Año de Publicación</label>
+        <input type="number" id="published_year" name="published_year" value="{{ $book->published_year }}" placeholder="{{ $book->published_year }}">
+    </div>
 
-    <input type="submit" value="Update">
+    <button type="submit" class="btnEdit">Actualizar</button>
 </form>
+@endsection

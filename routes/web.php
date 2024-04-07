@@ -7,10 +7,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/books/create', [BookController::class, 'create'])->name('book.create');
-
+//localhost/DAW/BookStore/public/books
 Route::get('/books', [BookController::class, 'index'])->name('book.index');
 
+//localhost/DAW/BookStore/public/books/create
+Route::get('/books/create', [BookController::class, 'create'])->name('book.create');
+
+//localhost/DAW/BookStore/public/books/{id}/edit
 Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('book.edit');
 
 Route::delete('/books/{id}', [BookController::class, 'destroy'])->name('book.destroy');

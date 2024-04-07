@@ -4,24 +4,35 @@
 
 @section('content')
 
-<h1>Este sera el formulario create</h1>
+<link rel="stylesheet" href="{{asset('css/create.css')}}">
+<script src="https://kit.fontawesome.com/2d5cafece0.js" crossorigin="anonymous"></script>
 
-<form action="{{ route('book.store') }}" method="POST">
+<h1>Formulario Create</h1>
+
+<form action="{{ route('book.store') }}" method="POST" class="book-form">
 
     @csrf
 
-    <label for="">Titulo</label>
-    <input type="text" id="title" name="title">
+    <div class="grupo-form">
+        <label for="title">Título</label>
+        <input type="text" id="title" name="title" class="form-control">
+    </div>
     
-    <label for="">Autor</label>
-    <input type="text" id="author_name" name="author_name">
+    <div class="grupo-form">
+        <label for="author_name">Autor</label>
+        <input type="text" id="author_name" name="author_name" class="form-control">
+    </div>
     
-    <label for="">ISBN</label>
-    <input type="text" id="isbn" name="isbn">
+    <div class="grupo-form">
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" name="isbn" class="form-control">
+    </div>
 
-    <label for="">Año Publicación</label>
-    <input type="number" id="published_year" name="published_year">
+    <div class="grupo-form">
+        <label for="published_year">Año de Publicación</label>
+        <input type="number" id="published_year" name="published_year" class="form-control">
+    </div>
 
-    <input type="submit" value="Add Book">
+    <button type="submit" class="btnAdd">Agregar Libro</button>
 </form>
 @endsection
