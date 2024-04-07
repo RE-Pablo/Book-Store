@@ -1,66 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema de gestión una biblioteca
 
+Desarrollado por [Pablo Elías Ramírez Escalante](https://github.com/RE-Pablo), este proyecto es un sistema básico de gestión de una biblioteca que se centra en operaciones CRUD para libros, utilizando Eloquent ORM de Laravel.
+
+## Descripción del proyecto
+
+El proyecto implica los siguientes pasos:
+
+### Paso 1: Configuración del proyecto
+
+1. *Inicialice un proyecto Laravel en la carpeta `htdocs`:* cree un nuevo proyecto Laravel usando Composer.
+```bash
+composer create-project laravel/laravel BookStore
+```
+2. *Inicialización del control de versiones:* inicie un repositorio remoto Git en la carpeta del proyecto
+```bash
+cd BookStore
+
+git init
+
+git add <archivos>
+
+git commit -m "commit"
+
+git branch -M master
+
+git remote add origin https://github.com/RE-Pablo/Book-Store.git
+```
+
+### Paso 2: Diseñar bases de datos y modelos
+
+1. *Cree el modelo de libro y la migración:*
+```bash
+$php artisan make:model books
+
+$php artisan make:migration books
+```
+2. *Analice la entidad del libro:* céntrese en el libro como entidad principal, con atributos como `title, author_name, isbn y pubished_year.`
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src='public/css/books.png' alt="Caracteristicas libro" width="500"/>
 </p>
 
-## About Laravel
+3. *Configurar la conexión a la base de datos en `.env`:*
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+    <img src="public/css/mysql.png" alt="Conexion BD" width="300"/>
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+4. Crear la base de datos `books` en `localhost/phpmyadmin/`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+5. *Migrar tabla(s) a la base de datos:*
+```bash
+$php artisan migrate
+```
 
-## Learning Laravel
+### Paso 3: Controladores y lógica empresarial
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. *Creación del controlador:* BookController para gestionar los datos del libro.
+```bash
+$php artisan make:controller BookController
+```
+2. *Defina métodos CRUD:* incluya métodos para operaciones CRUD dentro del controlador.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Paso 4: Construir vistas
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. *Diseño y vistas de inicio:* use plantillas de Blade para un diseño básico, incluida una vista de inicio que enumera todos los libros con opciones para manipular estos registros.
+2. *Formularios:* creación y edición de formularios que requieren atributos de libros.
 
-## Laravel Sponsors
+### Paso 5: Rutas
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. *Definir rutas:* establezca rutas para diversas operaciones y envíos de formularios en el archivo `web.php`.
 
-### Premium Partners
+### Paso 6: Prueba y depuración
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+1. *Pruebas manuales:* pruebas manuales exhaustivas de todas las funcionalidades CRUD.
 
-## Contributing
+### Paso 7: Control de versiones y documentación
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. *Confirmaciones de Git:* mensajes de confirmación regulares y descriptivos.
+2. *Archivo README:* instrucciones de configuración detalladas, funciones y orientación sobre cómo acceder y probar las operaciones CRUD.
 
-## Code of Conduct
+## Entregables
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **URL del repositorio de GitHub:**
 
-## Security Vulnerabilities
+[![Check out my GitHub](https://img.shields.io/badge/GitHub-Book--Store-black?style=for-the-badge&logo=github)](https://github.com/RE-Pablo/Book-Store)
+- **Demostración del proyecto:**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+[![VIDEO](https://img.shields.io/badge/Ver_en-Youtube-red?style=for-the-badge&logo=youtube)](https://youtu.be/XBNqi7PXOR0)
 
-## License
+## Instrucciones de configuración
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. *Instalar dependencias:*
+[![Composer](https://img.shields.io/badge/Instalar-Composer-brown)](https://getcomposer.org/)
+[![XAMPP](https://img.shields.io/badge/Instalar-XAMPP-orange)](https://www.apachefriends.org/es/index.html)
+
+2. *Clonar el repositorio en la carpeta `htdocs`:*
+```bash
+git clone https://github.com/RE-Pablo/Book-Store.git
+```
+3. Abra XAMPP y ejecute: `Apache Web Server` y `MySQL Database`
+
+4. Cree la base de datos `books` en `localhost/phpmyadmin/`
+5. Pruebe el codigo en su buscador: `localhost/BookStore/public/books`
+
+## Características
+
+- Operaciones CRUD para libros.
+- Interfaz de usuario simple e intuitiva
+- Laravel Eloquent ORM para operaciones eficientes de bases de datos
+
+## Pruebas
+
+- Pruebas manuales de todas las funcionalidades CRUD.
+- Garantizar la validación adecuada y el manejo de errores.
+
+## Contribución
+
+- [Pablo Elías Ramírez Escalante](https://github.com/RE-Pablo) - Desarrollador principal
