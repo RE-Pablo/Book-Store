@@ -5,7 +5,6 @@
 @section('content')
 
 <link rel="stylesheet" href="{{asset('css/edit.css')}}">
-<script src="https://kit.fontawesome.com/2d5cafece0.js" crossorigin="anonymous"></script>
 
 <h1>Formulario Edit</h1>
 

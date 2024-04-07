@@ -5,7 +5,6 @@
 @section('content')
 
 <link rel="stylesheet" href="{{asset('css/create.css')}}">
-<script src="https://kit.fontawesome.com/2d5cafece0.js" crossorigin="anonymous"></script>
 
 <h1>Formulario Create</h1>
 
